@@ -2,29 +2,102 @@
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
-    <link rel="icon" type="image/svg+xml" href="/src/favicon.svg" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Vite App</title>
-    <script>
-      if (localStorage.theme === 'dark' || !('theme' in localStorage)) {
-        document.querySelector('html').classList.add('dark');
-        document.querySelector('html').style.colorScheme = 'dark';
-      } else {
-        document.querySelector('html').classList.remove('dark');
-        document.querySelector('html').style.colorScheme = 'light';
-      }        
-    </script>      
+    <link rel="stylesheet" href="./css/styles.css" />
+
+    <link
+      href="https://cdn.jsdelivr.net/boxicons/2.0.7/css/boxicons.min.css"
+      rel="stylesheet"
+    />
+    <title>Page d'accueil</title>
   </head>
-  <body class="font-inter antialiased bg-slate-100 dark:bg-slate-900 text-slate-600 dark:text-slate-400">
-    <noscript>You need to enable JavaScript to run this app.</noscript>
-    <script>
-        if (localStorage.getItem('sidebar-expanded') == 'true') {
-            document.querySelector('body').classList.add('sidebar-expanded');
-        } else {
-            document.querySelector('body').classList.remove('sidebar-expanded');
-        }
-    </script>   
-    <div id="root"></div>
-    <script type="module" src="/src/main.jsx"></script>
+  <body>
+    <div class="container">
+      <nav>
+        <img src="./images/logoUcad.png" alt="" class="logo" />
+        <ul>
+          <li><a href="#" class="home-icon"></a></li>
+          <li><a href="#" class="search-icon"></a></li>
+          <li class="dropdown">
+            <a href="#" class="user-icon"></a>
+            <ul class="dropdown-menu">
+              <li>
+                <a href="#">
+                  <i class="bx bx-bar-chart-alt-2 dropdown-icon"></i>
+                  Tableau de bord
+                </a>
+              </li>
+              <li>
+                <a href="#">
+                  <i class="bx bxs-user dropdown-icon"></i>
+                  Profil
+                </a>
+              </li>
+              <li>
+                <a href="#">
+                  <i class="bx bxs-cog dropdown-icon"></i>
+                  Compte et paramètres
+                </a>
+              </li>
+              <li>
+                <a href="#">
+                  <i class="bx bx-notepad dropdown-icon"></i>
+                  Espace rédaction
+                </a>
+              </li>
+              <li>
+                <a href="#">
+                  <i class="bx bx-envelope dropdown-icon"></i>
+                  Messages
+                </a>
+              </li>
+              <li>
+                <a href="#">
+                  <i class="bx bxs-bell dropdown-icon"></i>
+                  Notifications
+                </a>
+              </li>
+              <li>
+                <a href="#">
+                  <i class="bx bx-power-off dropdown-icon"></i>
+                  Déconnexion
+                </a>
+              </li>
+            </ul>
+          </li>
+        </ul>
+        <img src="./images/cart.png" alt="" class="cart" />
+      </nav>
+
+      <section class="site-container">
+        <p>Bienvenue à</p>
+        <h1>Code Learning</h1>
+        <h4>Envie d'approfondir les connaissances déjà vues en classe...</h4>
+
+        <div class="row">
+          <a href="#">Démarrer mon inscription</a>
+          <a href="#">Découvrir les formations<span>&#x27f6</span></a>
+          <span>
+            Lorem, ipsum dolor sit amet consectetur adipisicing elit.<br />
+            Nemo impedit eaque odit quaerat ullam quidem?
+          </span>
+        </div>
+      </section>
+
+      <section class="social-icons">
+        <a href="#"><img src="./images/github-fill.png" alt="" /></a>
+        <a href="#"><img src="./images/instagram-fill.png" alt="" /></a>
+        <a href="#"><img src="./images/telegram-fill.png" alt="" /></a>
+        <a
+          href="https://drive.google.com/file/d/1u2ZQxyamKsgJ4JxO-kYbytfxaaEkOT_a/view?usp=sharing"
+          target="_blank"
+        >
+          <img src="./images/drive-fill.png" alt="" />
+        </a>
+      </section>
+    </div>
+
+    <script src="./js/script.js"></script>
   </body>
 </html>
