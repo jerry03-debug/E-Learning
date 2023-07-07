@@ -57,8 +57,7 @@ ul li a {
   position: relative;
   padding: 10px 20px;
   text-decoration: none;
-  color```css
-  : #fff;
+  color: #fff;
   font-size: 16px;
 }
 
@@ -78,34 +77,34 @@ ul li a:hover::after {
   width: 38%;
 }
 
-ul li a.search-icon::before {
-  content: "";
-  display: inline-block;
-  width: 30px;
-  height: 30px;
-  background: url('./../images/recherche.png') no-repeat center center;
-  background-size: contain;
-  margin-right: 5px;
-}
-
-ul li a.user-icon::before {
-  content: "";
-  display: inline-block;
-  width: 30px;
-  height: 30px;
-  background: url('./../images/user.png') no-repeat center center;
-  background-size: contain;
-  margin-right: 5px;
-}
-
+ul li a.search-icon::before,
+ul li a.user-icon::before,
 ul li a.home-icon::before {
   content: "";
   display: inline-block;
   width: 30px;
   height: 30px;
-  background: url('./../images/Home.png') no-repeat center center;
+  background-repeat: no-repeat;
+  background-position: center center;
   background-size: contain;
   margin-right: 5px;
+}
+
+ul li a.search-icon::before {
+  background-image: url('./../images/recherche.png');
+}
+
+ul li a.user-icon::before {
+  background-image: url('./../images/user.png');
+}
+
+ul li a.home-icon::before {
+  background-image: url('./../images/Home.png');
+}
+
+ul li a .dropdown-icon {
+  margin-right: 5px;
+  color: #fff;
 }
 
 .dropdown {
@@ -118,9 +117,10 @@ ul li a.home-icon::before {
   top: 100%;
   left: 0;
   z-index: 1;
-  background-color: #fff;
+  background-color: transparent;
   padding: 10px;
   list-style-type: none;
+  box-shadow: none;
 }
 
 .dropdown:hover .dropdown-menu {
@@ -129,13 +129,20 @@ ul li a.home-icon::before {
 
 .dropdown .dropdown-menu li {
   margin-bottom: 5px;
+  white-space: nowrap;
 }
 
 .dropdown .dropdown-menu a {
-  display: block;
+  display: flex;
+  align-items: center;
   padding: 5px;
   text-decoration: none;
-  color: #000;
+  color: #fff;
+}
+
+.dropdown .dropdown-menu a i {
+  margin-right: 5px;
+  
 }
 
 .site-container {
